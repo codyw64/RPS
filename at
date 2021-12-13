@@ -1,0 +1,35 @@
+[33mcommit a0ef99c48a830fb0959a08e022dfd482facb7b28[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;32mrps-ui[m[33m)[m
+Author: Cody <whearcody@gmail.com>
+Date:   Mon Dec 13 16:34:01 2021 +0000
+
+    Made a counter to keep track of score, as well as adding who won when the score gets to five
+
+[33mcommit 8f47a46510f0bdd85d2ab4fba3f5ebfde5b8ec0c[m
+Author: Cody <whearcody@gmail.com>
+Date:   Mon Dec 13 16:18:15 2021 +0000
+
+    Added a div that displays the output of who won, changed from a console.log to a output and textContent js.
+
+[33mcommit 6c9adcf55fcf3243af26bcc1ff3462cecfc1f351[m[33m ([m[1;31morigin/rps-ui[m[33m)[m
+Author: Cody <whearcody@gmail.com>
+Date:   Mon Dec 13 16:03:47 2021 +0000
+
+    banaa
+
+[33mcommit ef1d7b28621a0d1f296b5ce248f3ed135e25344e[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Cody <whearcody@gmail.com>
+Date:   Tue Dec 7 18:33:37 2021 +0000
+
+    Made a successful human vs computer rock paper scissors that is random, and displays to the console whether you have won or lost. The game is played 5 times.
+
+[33mcommit 0c83787704403407e2a2f831d0fa822f190f67f4[m
+Author: Cody <whearcody@gmail.com>
+Date:   Tue Dec 7 17:43:01 2021 +0000
+
+    test
+
+[33mcommit e7d5b1d7a7e2d1b9627218229aee70f15cd85f5e[m
+Author: codyw64 <95367026+codyw64@users.noreply.github.com>
+Date:   Tue Dec 7 17:43:29 2021 +0000
+
+    Initial commit
