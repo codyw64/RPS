@@ -4,68 +4,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
+    <button id="0">Rock</button>
+    <button id="1">Paper</button>
+    <button id="2">Scissors</button>
 
     <script>
         let playerSelection;
+        let playerChoice;
         let computerSelection;
         // letting the script know we will need these variables later
 
-
         // setting the function
         function singleRound(playerSelection, computerSelection) {
-            let playerChoice = prompt("Please enter rock, paper, or scissors :)");
-            playerSelection = playerChoice.toLowerCase();
-            //making the player choice all lower case so we can compare easily
-
-            //the math behind the random number
+            // making a random number that the computer will pick
             function computerPlay() {
                 let rand = Math.floor(Math.random() * 3)
                 return rand;
             }
-
-            let decider = computerPlay();
-
-            //making the random number mean a word
-            if (decider == 0) {
-                computerSelection= "rock";
-            } else if (decider == 1) {
-                computerSelection= "paper";
-            } else if (decider == 2) {
-                computerSelection= "scissors";
-            }
-
+            computerSelection = computerPlay();
             //comparing if the choices are the same
             if (playerSelection == computerSelection) {
                 return ("You draw! Play again:) ")
             }
 
             //comparing if theyre different
-            if (playerSelection == "rock" && computerSelection == "scissors") {
+            if (playerSelection == 0 && computerSelection == 2) {
                 return ("You win! Rock beats scissors!");
-            } else if (playerSelection == "rock" && computerSelection == "paper") {
+            } else if (playerSelection == 0 && computerSelection == 1) {
                 return ("Oh no! You lose! Paper beats rock!");
             }
 
-            if (playerSelection == "paper" && computerSelection == "rock") {
+            if (playerSelection == 1 && computerSelection == 0) {
                 return ("You win! Paper beats rock!");
-            } else if (playerSelection == "paper" && computerSelection == "scissors") {
-                return ("Oh no! You lose! Scissors beats rock!");
+            } else if (playerSelection == 1 && computerSelection == 2) {
+                return ("Oh no! You lose! Scissors beats paper!");
             }
 
-            if (playerSelection == "scissors" && computerSelection == "paper") {
+            if (playerSelection == 2 && computerSelection == 1) {
                 return ("You win! Scissors beats paper!");
-            } else if (playerSelection == "scissors" && computerSelection == "rock") {
+            } else if (playerSelection == 2 && computerSelection == 0) {
                 return ("Oh no! You lose! Rock beats scissors!");
             }
         
         }
         
-        for (let i = 0; i < 5; i++) {
-            console.log(singleRound(playerSelection, computerSelection));
-        }
-
+        //this bottom bit adds an event listener to each button, such that when they are pressed
+        // the button id is set to the player choice, and then plays one round.
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                let playerChoice = button.id;
+                console.log(singleRound(playerChoice, computerSelection));
+            });
+        });
     </script>
 </html>
