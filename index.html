@@ -11,13 +11,19 @@
     <button id="0">Rock</button>
     <button id="1">Paper</button>
     <button id="2">Scissors</button>
-    <div id="output"></div>
+    <div id="output">Will you win?</div>
+    <div id="score"></div>
+    <div id="compScore"></div>
 
     <script>
-        const outputDiv = document.querySelector('#output');
+        let outputDiv = document.querySelector('#output');
+        let scoreDiv = document.querySelector('#score');
+        let compScoreDiv = document.querySelector('#compScore');
         let playerSelection;
         let playerChoice;
         let computerSelection;
+        let score = 0;
+        let compScore = 0;
         // letting the script know we will need these variables later
 
         // setting the function
@@ -35,18 +41,31 @@
             //comparing if theyre different
             if (playerSelection == 0 && computerSelection == 2) {
                 outputDiv.textContent = "You win! Rock beats scissors!";
+                score++;
             } else if (playerSelection == 0 && computerSelection == 1) {
                 outputDiv.textContent = "Oh no! You lose! Paper beats rock!";
+                compScore++;
             }
             if (playerSelection == 1 && computerSelection == 0) {
                 outputDiv.textContent = "You win! Paper beats rock!";
+                score++;
             } else if (playerSelection == 1 && computerSelection == 2) {
                 outputDiv.textContent = "Oh no! You lose! Scissors beats paper!";
+                compScore++;
             }
             if (playerSelection == 2 && computerSelection == 1) {
                 outputDiv.textContent = "You win! Scissors beats paper!";
+                score++;
             } else if (playerSelection == 2 && computerSelection == 0) {
                 outputDiv.textContent = "Oh no! You lose! Rock beats scissors!";
+                compScore++;
+            }
+            scoreDiv.innerHTML = score;
+            compScoreDiv.innerHTML = compScore;
+            if (score == 5) {
+                alert("Well done! you have won the game!")
+            } else if (compScore == 5) {
+                alert("Unlucky! You have lost!!");
             }
         }
         
