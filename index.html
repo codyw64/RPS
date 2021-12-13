@@ -11,8 +11,10 @@
     <button id="0">Rock</button>
     <button id="1">Paper</button>
     <button id="2">Scissors</button>
+    <div id="output"></div>
 
     <script>
+        const outputDiv = document.querySelector('#output');
         let playerSelection;
         let playerChoice;
         let computerSelection;
@@ -28,28 +30,24 @@
             computerSelection = computerPlay();
             //comparing if the choices are the same
             if (playerSelection == computerSelection) {
-                return ("You draw! Play again:) ")
+                outputDiv.textContent = "You draw! Play again:)";
             }
-
             //comparing if theyre different
             if (playerSelection == 0 && computerSelection == 2) {
-                return ("You win! Rock beats scissors!");
+                outputDiv.textContent = "You win! Rock beats scissors!";
             } else if (playerSelection == 0 && computerSelection == 1) {
-                return ("Oh no! You lose! Paper beats rock!");
+                outputDiv.textContent = "Oh no! You lose! Paper beats rock!";
             }
-
             if (playerSelection == 1 && computerSelection == 0) {
-                return ("You win! Paper beats rock!");
+                outputDiv.textContent = "You win! Paper beats rock!";
             } else if (playerSelection == 1 && computerSelection == 2) {
-                return ("Oh no! You lose! Scissors beats paper!");
+                outputDiv.textContent = "Oh no! You lose! Scissors beats paper!";
             }
-
             if (playerSelection == 2 && computerSelection == 1) {
-                return ("You win! Scissors beats paper!");
+                outputDiv.textContent = "You win! Scissors beats paper!";
             } else if (playerSelection == 2 && computerSelection == 0) {
-                return ("Oh no! You lose! Rock beats scissors!");
+                outputDiv.textContent = "Oh no! You lose! Rock beats scissors!";
             }
-        
         }
         
         //this bottom bit adds an event listener to each button, such that when they are pressed
